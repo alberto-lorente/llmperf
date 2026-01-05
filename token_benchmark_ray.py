@@ -88,8 +88,8 @@ def get_token_throughput_latencies(
         ))
     print("Number of output tokens passed to the prompts")
     print(num_output_tokens_list)
-    print("Prompts")
-    print(prompts)
+    # print("Prompts")
+    # print(prompts)
     print("---------")
     start_time = time.monotonic()
     pbar = tqdm(total=max_num_completed_requests)
@@ -121,6 +121,7 @@ def get_token_throughput_latencies(
                 request_metrics, gen_text, _ = out
                 print(f"Generated text: {gen_text}")
                 print("Alleged output tokens: ", num_output_tokens_list[i])
+                print("Prompt", prompts[i])
                 print("----------------------------------")
                 num_output_tokens = get_token_length(gen_text)
                 with completed_requests_lock:
