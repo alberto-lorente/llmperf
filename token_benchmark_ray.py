@@ -121,6 +121,7 @@ def get_token_throughput_latencies(
                 request_metrics, gen_text, _ = out
                 print(f"Generated text: {gen_text}")
                 print("Alleged output tokens: ", num_output_tokens_list[i])
+                print("----------------------------------")
                 num_output_tokens = get_token_length(gen_text)
                 with completed_requests_lock:
                     if num_completed_requests < max_num_completed_requests:
