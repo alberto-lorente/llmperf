@@ -119,7 +119,7 @@ def get_token_throughput_latencies(
             all_metrics = []
             for i, out in enumerate(outs):
                 request_metrics, gen_text, _ = out
-                print(f"Generated text: {gen_test}")
+                print(f"Generated text: {gen_text}")
                 print("Alleged output tokens: ", num_output_tokens_list[i])
                 num_output_tokens = get_token_length(gen_text)
                 with completed_requests_lock:
